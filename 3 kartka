@@ -1,0 +1,26 @@
+1
+CREATE TABLE kreatura AS SELECT * FROM wikingowie.kreatura;
+CREATE TABLE zasob AS SELECT * FROM wikingowie.zasob;
+CREATE TABLE ekwipunek AS SELECT * FROM wikingowie.ekwipunek;
+SELECT * FROM snopekg.zasob;
+SELECT * FROM zasob WHERE rodzaj LIKE 'jedzenie';
+SELECT idZasobu, ilosc from ekwipunek WHERE idKreatury IN (1,3,5);
+
+2
+SELECT * FROM kreatura WHERE rodzaj NOT LIKE 'wiedzma' AND udzwig >= 50;
+SELECT * FROM zasob WHERE waga BETWEEN 2 AND 5;
+SELECT * FROM kreatura WHERE nazwa LIKE '%or%' AND udzwig BETWEEN 30 AND 80;
+
+3
+SELECT * FROM zasob WHERE dataPozyskania LIKE '%-07-%';
+SELECT * FROM zasob WHERE dataPozyskania LIKE '%-08-%';
+SELECT * FROM zasob ORDER BY waga;
+SELECT nazwa FROM kreatura ORDER BY dataUr ASC LIMIT 
+4
+SELECT DISTINCT(nazwa) FROM zasob;
+SELECT nazwa, rodzaj FROM kreatura WHERE rodzaj LIKE 'wi%';
+SELECT waga*ilosc as "waga calkowita" FROM zasob WHERE year(dataPozyskania) BETWEEN 2000 AND 2007;
+5
+SELECT * FROM zasob WHERE rodzaj IS NULL;
+SELECT DISTINCT nazwa, rodzaj FROM zasob WHERE nazwa LIKE 'Ba%';
+SELECT DISTINCT nazwa, rodzaj FROM zasob WHERE nazwa LIKE '%os';
